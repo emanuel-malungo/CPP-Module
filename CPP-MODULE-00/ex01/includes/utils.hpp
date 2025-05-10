@@ -1,43 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 14:14:05 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 17:50:46 by emalungo         ###   ########.fr       */
+/*   Created: 2025/05/10 15:50:07 by emalungo          #+#    #+#             */
+/*   Updated: 2025/05/10 18:04:37 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef UTILS_HPP
+# define UTILS_HPP
 
-# define MAX_CONTACTS 8
-
-# include "./Contact.hpp"
 # include "./ErrorHandling.hpp"
-# include "./utils.hpp"
 # include <cstdlib>
 # include <iomanip>
 # include <iostream>
 # include <string>
 
-class PhoneBook
-{
-  private:
-	int correntIndex;
-	int oldestIndex;
-	Contact contacts[MAX_CONTACTS];
-
-  public:
-	PhoneBook();
-	~PhoneBook();
-
-	void addContact(void);
-	void searchContact(void);
-	void displayAllContacts(void);
-	void displayContact(int index);
-};
+void	displayHeader(void);
+int		getUserInput(std::string input, int indexIput, std::string prompt, int mod);
 
 #endif

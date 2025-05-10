@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   ErrorHandling.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 14:14:05 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 17:50:46 by emalungo         ###   ########.fr       */
+/*   Created: 2025/05/10 14:48:42 by emalungo          #+#    #+#             */
+/*   Updated: 2025/05/10 18:12:21 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef HANDLING_HPP
+# define HANDLING_HPP
 
-# define MAX_CONTACTS 8
-
-# include "./Contact.hpp"
-# include "./ErrorHandling.hpp"
-# include "./utils.hpp"
-# include <cstdlib>
-# include <iomanip>
+# include <cctype>
 # include <iostream>
+# include <ostream>
 # include <string>
 
-class PhoneBook
-{
-  private:
-	int correntIndex;
-	int oldestIndex;
-	Contact contacts[MAX_CONTACTS];
-
-  public:
-	PhoneBook();
-	~PhoneBook();
-
-	void addContact(void);
-	void searchContact(void);
-	void displayAllContacts(void);
-	void displayContact(int index);
-};
+int	checkName(std::string name);
+int	checkPhoneNumber(std::string phoneNumber);
+int	checkDarckestSecret(std::string darkestSecret);
+int checkIndexInput(int indexInput);
 
 #endif
