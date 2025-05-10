@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.cpp                                          :+:      :+:    :+:   */
+/*   Utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:57:35 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 18:54:16 by emalungo         ###   ########.fr       */
+/*   Updated: 2025/05/10 18:58:38 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/utils.hpp"
+#include "../includes/Utils.hpp"
 
 int	getUserInput(std::string input, int indexIput, std::string prompt, int mod)
 {

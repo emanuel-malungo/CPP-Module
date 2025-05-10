@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:16:23 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 18:07:44 by emalungo         ###   ########.fr       */
+/*   Updated: 2025/05/10 19:03:24 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void PhoneBook::addContact(void)
 void PhoneBook::searchContact(void)
 {
 	system("clear");
-	int indexInput;
+	// int indexInput;
 	
 	if (correntIndex == 0)
 	{
@@ -63,22 +63,14 @@ void PhoneBook::searchContact(void)
 		return ;
 	}
 	displayAllContacts();
-	if (!getUserInput("", indexInput, "Enter the contacts index to view the details", 3))
-		return ;
-	displayContact(indexInput);
+	// if (!getUserInput("", indexInput, "Enter the contacts index to view the details", 3))
+	// 	return ;
+	// displayContact(indexInput);
 }
 
 void PhoneBook::displayAllContacts(void)
 {
-	int i;
-
-	i = -1;
 	displayHeader();
-	while (++i < correntIndex)
-	{
-		
-	}
-	
 }
 
 void PhoneBook::displayContact(int index)

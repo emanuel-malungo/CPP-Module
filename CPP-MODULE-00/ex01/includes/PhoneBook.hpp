@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:14:05 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 17:50:46 by emalungo         ###   ########.fr       */
+/*   Updated: 2025/05/10 18:58:54 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 # include "./Contact.hpp"
 # include "./ErrorHandling.hpp"
-# include "./utils.hpp"
+# include "./Utils.hpp"
 # include <cstdlib>
 # include <iomanip>
 # include <iostream>

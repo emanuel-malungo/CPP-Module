@@ -6,7 +6,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = $(SRCDIR)/PhoneBook.cpp \
       $(SRCDIR)/Contact.cpp \
 	  $(SRCDIR)/ErrorHandling.cpp \
-	  $(SRCDIR)/utils.cpp \
+	  $(SRCDIR)/Utils.cpp \
 	  $(SRCDIR)/main.cpp 
 
 OBJS = $(SRC:.cpp=.o)
