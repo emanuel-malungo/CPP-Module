@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:16:23 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 19:03:24 by emalungo         ###   ########.fr       */
+/*   Updated: 2025/05/11 09:49:10 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 PhoneBook::PhoneBook()
 {
-	correntIndex = 0;
+	currentIndex = 0;
+    oldestIndex = 0;
 }
 
 PhoneBook::~PhoneBook()
@@ -23,54 +24,76 @@ PhoneBook::~PhoneBook()
 
 void PhoneBook::addContact(void)
 {
-	Contact	newContact;
-
-	std::string input;
-	system("clear");
-	std::cout << "### ADD NEW CONTACT 😊 ###" << std::endl;
-	getUserInput(input, 0, "Enter the first name", 0);
-	newContact.setFirstName(input);
-	if (!getUserInput(input, 0, "Enter the last name", 0))
-		return ;
-	newContact.setLastName(input);
-	if (!getUserInput(input, 0, "Enter the nick name", 0))
-		return ;
-	newContact.setNickName(input);
-	if (!getUserInput(input, 0, "Enter the phone number", 1))
-		return ;
-	newContact.setPhoneNumber(input);
-	if (!getUserInput(input, 0, "Enter the darkest secret", 2))
-		return ;
-	newContact.setDarkestSecret(input);
-	if (correntIndex < MAX_CONTACTS)
-		contacts[correntIndex++] = newContact;
-	else
-	{
-		contacts[oldestIndex] = newContact;
-		oldestIndex = (oldestIndex + 1) % MAX_CONTACTS;
-	}
-	std::cout << "Contact added successfully!" << std::endl;
+    Contact newContact;
+    std::string input;
+    
+    system("clear");
+    std::cout << "### ADD NEW CONTACT ###" << std::endl;
+    
+    if (!getUserInput(input, "Enter the first name", 0))
+        return;
+    newContact.setFirstName(input);
+    
+    if (!getUserInput(input, "Enter the last name", 0))
+        return;
+    newContact.setLastName(input);
+    
+    if (!getUserInput(input, "Enter the nick name", 0))
+        return;
+    newContact.setNickName(input);
+    
+    if (!getUserInput(input, "Enter the phone number", 1))
+        return;
+    newContact.setPhoneNumber(input);
+    
+    if (!getUserInput(input, "Enter the darkest secret", 2))
+        return;
+    newContact.setDarkestSecret(input);
+    
+    if (currentIndex < MAX_CONTACTS)
+        contacts[currentIndex++] = newContact;
+    else
+    {
+        contacts[oldestIndex] = newContact;
+        oldestIndex = (oldestIndex + 1) % MAX_CONTACTS;
+    }
+    
+    std::cout << "Contact added successfully!" << std::endl;
 }
+
+
 
 void PhoneBook::searchContact(void)
 {
 	system("clear");
-	// int indexInput;
+	int indexInput;
 	
-	if (correntIndex == 0)
+	indexInput = 0;
+	if (currentIndex == 0)
 	{
 		std::cerr << "No contact saved." << std::endl;
 		return ;
 	}
 	displayAllContacts();
-	// if (!getUserInput("", indexInput, "Enter the contacts index to view the details", 3))
-	// 	return ;
-	// displayContact(indexInput);
+	if (!getUserInput(indexInput, "Enter the contact's index to view the details", currentIndex))
+        return ;
+	displayContact(indexInput);
 }
 
 void PhoneBook::displayAllContacts(void)
 {
-	displayHeader();
+    int i;
+
+    displayHeader();
+    i = -1;
+    while (++i < currentIndex)
+    {
+        std::cout << std::setw(10) << i;
+        std::cout << "|" << printTableCell(contacts[i].getFirstName());
+        std::cout << "|" << printTableCell(contacts[i].getLastName());
+        std::cout << "|" << printTableCell(contacts[i].getNickName());
+        std::cout << std::endl;
+    }
 }
 
 void PhoneBook::displayContact(int index)

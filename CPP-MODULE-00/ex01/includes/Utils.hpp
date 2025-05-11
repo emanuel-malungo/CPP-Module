@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 15:50:07 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 18:58:48 by emalungo         ###   ########.fr       */
+/*   Updated: 2025/05/11 09:27:22 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <string>
 
 void	displayHeader(void);
-int		getUserInput(std::string input, int indexIput, std::string prompt, int mod);
+std::string    printTableCell(std::string str);
+bool getUserInput(int &indexInput, const std::string &prompt, int currentIndex);
+bool getUserInput(std::string &input, const std::string &prompt, int validationType);
 
 #endif

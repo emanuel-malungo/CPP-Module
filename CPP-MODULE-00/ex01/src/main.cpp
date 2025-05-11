@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:16:01 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 17:38:11 by emalungo         ###   ########.fr       */
+/*   Updated: 2025/05/11 08:23:25 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	main(void)
 		std::cin.clear();
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
-		if (std::cin.eof())
-			break ;
-		if (command == "EXIT")
+		if (command == "EXIT" || std::cin.eof())
 			break ;
 		else if (command == "ADD")
 			phoneBook.addContact();

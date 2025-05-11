@@ -6,7 +6,7 @@
 /*   By: emalungo <emalungo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:14:05 by emalungo          #+#    #+#             */
-/*   Updated: 2025/05/10 18:58:54 by emalungo         ###   ########.fr       */
+/*   Updated: 2025/05/11 09:11:58 by emalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 class PhoneBook
 {
   private:
-	int correntIndex;
+	int currentIndex;
 	int oldestIndex;
 	Contact contacts[MAX_CONTACTS];
 
